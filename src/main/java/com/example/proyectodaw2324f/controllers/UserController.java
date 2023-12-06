@@ -225,11 +225,4 @@ public class UserController {
         return "redirect:/courses/" + courseDTO.getId();
     }
 
-    @GetMapping("/verifyUsername")
-    public ResponseEntity<Map<String,Boolean>> verifyUsername(@RequestParam String username){
-        boolean existe = userService.findUsername(username);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("existe", existe);
-        return ResponseEntity.ok(response);
-    }
 }
