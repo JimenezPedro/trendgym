@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:ital,wght@0,400;1,100;1,300&display=swap');
+
+body {
+    font-family: 'Roboto', 'SansSerif';
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(to right, #003974, #0056b3);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #000;
+    background-color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+    color: #fff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.contenedor-publicar {
+    margin: 10px;
+    text-align: center;
+}
+
+.contenedor-publicar a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+
+}
+
+.contenedor-publicar a:hover {
+    background-color: #003d82;
+}
+
+.formulario-post {
+    background-color: #f5f8fa;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.form-post .form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input{
+    width: 90%;
+}
+
+.form-group textarea{
+    width: 90%;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccd6dd;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #1da1f2;
+}
+
+.image-upload-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+.image-upload {
+    display: none;
+}
+
+.submit-btn {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-btn:disabled{
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.submit-btn:hover {
+    background-color: #1991db;
+}
+
+.submit-btn:disabled:hover{
+    background-color: gray;
+}
+
+.contenedor-cursos {
+    display: flex;
+    flex-direction: column;
+}
+
+.columna-curso {
+    flex-basis: calc(50% - 40px);
+    margin: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.columna-curso a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.columna-curso a .eliminar-boton{
+    margin: 20px;
+
+}
+
+.eliminar-boton form input{
+    background-color: #cb2020;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: auto;
+}
+
+.eliminar-boton form input:hover{
+    background-color: #a20606;
+}
+
+.columna-curso img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: contain;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.columna-curso h3 {
+    font-size: 20px;
+    margin: 15px;
+    color: #333333;
+}
+
+.columna-curso p {
+    font-size: 16px;
+    color: #666666;
+    margin: 0 15px 15px;
+    line-height: 1.5;
+}
+
+.price {
+    color: #888;
+}

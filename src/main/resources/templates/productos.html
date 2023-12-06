@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Control Cursos</title>
+  <link rel="stylesheet" href="/css/usuarios.css">
+  <link rel="icon" type="image/png" href="/img/logo.png">
+</head>
+<body th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+<header>
+  <a th:href="@{index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
+  <h1>TRENdGYM</h1>
+</header>
+<div class="add-course-link">
+  <a class="button-link" th:href="@{createProduct}">Agregar nuevo producto</a>
+</div>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nombre del producto</th>
+    <th>Acción</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="producto : ${productos}">
+    <td th:text="${producto.id}">ID</td>
+    <td th:text="${producto.name}">Nombre usuario</td>
+    <td>
+      <form th:action="@{/productos/{id}(id=${producto.id})}" method="post">
+        <input type="submit" value="Eliminar" />
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

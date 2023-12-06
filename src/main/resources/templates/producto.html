@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${producto.name}">Producto</title>
+    <link rel="stylesheet" href="/css/course.css">
+    <link rel="icon" type="image/png" href="/img/logo.png">
+</head>
+<body>
+<header>
+    <a th:href="@{../index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
+    <h1>TRENdGYM</h1>
+</header>
+<div class="container">
+    <h1 th:text="${producto.name}">Nombre del producto</h1>
+    <p th:text="'PRECIO: ' + ${producto.price} + '€'">Precio del curso</p>
+    <div class="video-container">
+        <img th:src="${producto.imgBase64}" alt="Imagen del producto">
+    </div>
+    <p class="description" th:text="${producto.description}">Descripción del producto</p>
+</div>
+</body>
+</html>

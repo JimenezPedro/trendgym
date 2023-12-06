@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${post.title}">Post</title>
+    <link rel="stylesheet" href="/css/course.css">
+    <link rel="icon" type="image/png" href="/img/logo.png">
+</head>
+<body>
+<header>
+    <a th:href="@{../index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
+    <h1>TRENdGYM</h1>
+</header>
+<div class="container">
+    <h1 th:text="${post.title}">Título del post</h1>
+    <p th:text="${post.user.username}"></p>
+    <p th:text="${#temporals.format(post.date, 'dd/MM/yyyy')}">Fecha del post</p>
+    <div th:if="${post.imgBase64 != null}" class="video-container">
+        <img th:src="${post.imgBase64}" alt="imagen del post">
+    </div>
+    <p class="description" th:text="${post.content}">Contenido del post</p>
+    <div class="container-comentarios">
+        <div class="formulario-post">
+            <form th:action="@{/comentarPost}" th:object="${commentDTO}" method="post">
+                <div class="form-group">
+                    <textarea name="comment" th:field="*{comment}" required placeholder="Comenta este post..." class="form-control"></textarea>
+                </div>
+                <input type="hidden" name="postId" th:value="${post.id}"/>
+                <div sec:authorize="!isAuthenticated()" >
+                    <p style="color: red">Inicia sesión para poder comentar las publicaciones</p>
+                    <button disabled type="submit" class="submit-btn">Comentar</button>
+                </div>
+                <button sec:authorize="isAuthenticated()" type="submit" class="submit-btn">Comentar</button>
+            </form>
+        </div>
+
+        <div class="comentarios">
+            <div class="comentario" th:each="comentario : ${comments}">
+                <div class="eliminar-boton" th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+                    <form th:action="@{/comment/{id}(id=${comentario.getId()})}" th:object="${post}" method="post">
+                        <input type="hidden" name="postId" th:value="${post.id}" th:field="${post.id}"/>
+                        <input type="submit" value="Eliminar" />
+                    </form>
+                </div>
+                <p th:text="${comentario.content}"></p>
+                <p class="light" th:text="'Autor: ' + ${comentario.user.username}"></p>
+                <p class="light" th:text="'Publicado: ' + ${#temporals.format(comentario.date, 'dd/MM/yyyy')}"></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

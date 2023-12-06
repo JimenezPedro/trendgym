@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Control Usuarios</title>
+  <link rel="stylesheet" href="/css/usuarios.css">
+  <link rel="icon" type="image/png" href="/img/logo.png">
+</head>
+<body th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+<header>
+  <a th:href="@{index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
+  <h1>TRENdGYM</h1>
+</header>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nombre de usuario</th>
+    <th>Email</th>
+    <th>Acción</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="user : ${users}">
+    <td th:text="${user.id}">ID</td>
+    <td th:text="${user.username}">Nombre usuario</td>
+    <td th:text="${user.email}">Email</td>
+    <td>
+      <form th:if="${user.username} != 'admin' and ${user.getCourses().isEmpty()}" th:action="@{/{id}(id=${user.id})}" method="post">
+        <input type="submit" value="Eliminar" />
+      </form>
+      <form th:if="${user.username} != 'admin' and ${!user.getCourses().isEmpty()}" th:action="@{/{id}(id=${user.id})}" method="post">
+        <input type="submit" disabled value="Eliminar" />
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

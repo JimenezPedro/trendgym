@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Foro de la comunidad</title>
+    <link rel="stylesheet" href="/css/foro.css">
+</head>
+<body>
+<header>
+    <a th:href="@{index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
+    <h1>TRENdGYM</h1>
+</header>
+
+<div class="contenedor">
+    <div class="formulario-post">
+        <form th:action="@{/publicar}" th:object="${postForm}" method="post" enctype="multipart/form-data" class="form-post">
+            <div class="form-group">
+                <input type="text" th:field="*{title}" id="titulo" name="titulo" required placeholder="¿Qué está pasando?" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <textarea id="contenido" name="contenido" th:field="*{content}" required placeholder="Cuenta más..." class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="imagen" class="image-upload-label">Sube una imagen</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" th:field="*{img}" class="image-upload">
+            </div>
+
+            <div sec:authorize="!isAuthenticated()" >
+                <p style="color: red">Inicia sesión para poder publicar</p>
+                <button disabled type="submit" class="submit-btn">Publicar</button>
+            </div>
+            <button sec:authorize="isAuthenticated()" type="submit" class="submit-btn">Publicar</button>
+        </form>
+    </div>
+    <div class="contenedor-cursos">
+        <div class="columna-curso"  th:each="post : ${posts}">
+            <a th:href="@{/Foro/{id}(id=${post.id})}">
+                <div class="eliminar-boton" th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+                    <form th:action="@{/Foro/{id}(id=${post.id})}" method="post">
+                        <input type="submit" value="Eliminar" />
+                    </form>
+                </div>
+                <div th:if="${post.imgBase64 != null}">
+                    <img  th:src="${post.imgBase64}" alt="Miniatura del Curso" />
+                </div>
+                <h3 th:text="${post.title}">Título del post</h3>
+                <p th:text="${post.content}">Descripción del post</p>
+                <p th:text="${post.user.username}"></p>
+                <p th:text="${#temporals.format(post.date, 'dd/MM/yyyy')}">Fecha del post</p>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <title>TRENdGYM</title>
+    <link rel="icon" type="image/png" href="/img/logo.png">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="/img/logo.png" alt="Ícono del gimnasio">
+        <h1>TRENdGYM</h1>
+    </div>
+    <div sec:authorize="!isAuthenticated()" class="login-register">
+        <a th:href="@{login}">Iniciar Sesión</a>
+        <span>|</span>
+        <a th:href="@{register}">Registro</a>
+    </div>
+    <div sec:authorize="isAuthenticated()">
+        <div class="user-profile">
+            <a th:href="@{profileArea}"><img src="/img/logoPerfil.png" alt="Icono de perfil" class="profile-icon"></a>
+        </div>
+    </div>
+</header>
+<nav>
+    <ul>
+        <li><a th:href="@{tienda}">Tienda</a></li>
+        <li><a th:href="@{courses}">Zona Entrenamiento</a></li>
+        <li><a th:href="@{Foro}">Foro Comunidad</a></li>
+        <li th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+            <a th:href="@{panelControl}">Panel de control</a>
+        </li>
+    </ul>
+</nav>
+<div class="banner">
+    <img src="/img/banner1.png" alt="Banner" />
+</div>
+
+<section class="about container">
+    <div>
+        <p>
+            En TRENdGYM, creemos que la aptitud física es un viaje personal, pero eso no significa que tengas que hacerlo solo. Como tu gimnasio en línea de confianza, nos dedicamos a brindarte una experiencia de entrenamiento excepcional, accesible desde la comodidad de tu hogar. <br>
+            <br>
+            Nuestro nombre, TRENdGYM, refleja nuestra misión: estar siempre al frente de las últimas tendencias en fitness y bienestar. Nos esforzamos por incorporar las tecnologías más avanzadas y los métodos de entrenamiento más innovadores para ofrecerte una experiencia de entrenamiento completa y personalizada.
+            Ya sea que busques perder peso, ganar músculo, mejorar tu condición física general o simplemente mantenerte activo, tenemos algo para ti. Nuestra amplia gama de clases virtuales, guiadas por entrenadores expertos, te motivará y desafiará, independientemente de tu nivel de condición física. Además, nuestra comunidad en línea te permite conectar con otros entusiastas del fitness, compartiendo tus logros y encontrando ese empuje adicional para alcanzar tus metas.
+            <br>
+            <br>
+            Únete a TRENdGYM y transforma tu forma de entrenar. ¡Estamos aquí para apoyarte en cada paso del camino!
+        </p>
+    </div>
+</section>
+
+<div class="expositor-productos">
+    <h2>Nuestra mejor selección</h2>
+    <div class="productos" id="productos">
+        <img src="/img/cinturon.png" alt="Imagen 1">
+        <img src="/img/rodilleras.png" alt="Imagen 2">
+        <img src="/img/straps.png" alt="Imagen 3">
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <a th:href="@{politicaPrivacidad}">Política de Privacidad</a>
+        <a th:href="@{politicaCookies}">Política de Cookies</a>
+        <a th:href="@{acercaDe}">Acerca de</a>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2023 TRENdGYM - Todos los derechos reservados</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/css/profile.css">
+  <title>Perfil de Usuario</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="icon" type="image/png" href="/img/logo.png">
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth'
+
+      });
+      calendar.render();
+    });
+
+  </script>
+</head>
+<body>
+<header>
+  <a th:href="@{index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
+  <h1>TRENdGYM</h1>
+</header>
+<main>
+  <div class="perfil">
+    <p class="perfilUsuario"><strong th:text="${user.name}"></strong></p>
+    <div th:if="${user.img == null}">
+      <img src="/img/userDefault.png" alt="sad">
+    </div>
+    <div th:if="${user.img != null}">
+      <img th:src="${imageBase64}" alt="Imagen de perfil del usuario" />
+    </div>
+    <form action="#" th:action="@{/logout}" class="form-logout" method="post">
+      <button class="btn btn-sm btn-primary btn-block" type="submit">Cerrar Sesión</button>
+    </form>
+  </div>
+  <br>
+  <form class="form-update" id="updateForm" th:action="@{update}" th:object="${user}" method="post" enctype="multipart/form-data" th:if="${#authorization.expression('hasAuthority(''USER'')')}">
+    <h2>Actualiza tu perfil</h2>
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion" th:field="*{address}"><br><br>
+
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" id="ciudad" name="ciudad" th:field="*{city}"><br><br>
+
+    <label for="estatura">Estatura (cm):</label>
+    <input type="number" id="estatura" name="estatura" th:field="*{height}"><br><br>
+
+    <label for="peso">Peso (kg):</label>
+    <input type="number" id="peso" name="peso" th:field="*{weight}"><br><br>
+
+    <label for="img">Imagen de perfil:</label>
+    <input type="file" id="img" name="img"  accept="image/*"><br><br>
+
+    <input type="submit" value="Actualizar">
+  </form>
+  <div class="imc-section" th:if="${#authorization.expression('hasAuthority(''USER'')')}">
+    <br>
+    <h3>IMC</h3>
+    <p>
+      El Índice de Masa Corporal (IMC) es una medida utilizada para evaluar si una persona tiene un peso saludable en relación con su estatura.
+      Es una fórmula simple que se calcula dividiendo el peso de una persona en kilogramos por el cuadrado de su altura en metros (kg/m²).<br><br>
+      Es importante decir que el IMC no distingue entre la masa muscular y la grasa corporal, es decir, una persona puede tener un bajo porcentaje graso
+      y un alto porcentaje de masa muscular dando un peso elevado y por tanto según el IMC poder tener sobrepeso u obesidad.
+    </p>
+    <table>
+      <tr>
+        <th>IMC</th>
+        <th>Recomendación</th>
+      </tr>
+      <tr>
+        <td th:text="${user.imc}"></td>
+        <td th:if="${user.imc<10}"></td>
+        <td th:if="${user.imc>=30}">
+          Si tu IMC se clasifica como "Obesidad", esto significa que tienes un exceso significativo de peso en relación con tu altura. La obesidad está asociada con un mayor riesgo de enfermedades crónicas, como hipertensión arterial, diabetes tipo 2 y enfermedades del corazón. Consulta a un médico o un dietista para recibir orientación y apoyo en la gestión de tu peso y salud.
+        </td>
+        <td th:if="${user.imc>25 && user.imc<30}">Si tu IMC se encuentra en la categoría de "Sobrepeso", esto indica que tienes un exceso de peso en relación con tu altura. El sobrepeso puede aumentar el riesgo de desarrollar problemas de salud como enfermedades cardiovasculares y diabetes. Es recomendable hablar con un profesional de la salud para establecer un plan de pérdida de peso y mejorar tu bienestar.</td>
+        <td th:if="${user.imc>=18.5 && user.imc <= 25}"> ¡Felicidades! Tu IMC está en la categoría de "Peso Normal". Esto significa que tu peso está dentro del rango considerado saludable para tu altura. Mantener un peso normal es importante para una buena salud en general. Sigue llevando un estilo de vida equilibrado y activo para mantener este estado saludable.
+        </td>
+        <td th:if="${user.imc<18.5 && user.imc>10}">Si tu IMC está en la categoría de "Bajo Peso", esto puede indicar que tu peso actual es menor de lo que se considera saludable para tu altura. Puedes estar en riesgo de carencias nutricionales y otros problemas de salud. Es importante hablar con un profesional de la salud para determinar las posibles causas y tomar medidas para alcanzar un peso saludable.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="calendar"></div>
+  <div class="courses-subscription" th:if="${#authorization.expression('hasAuthority(''USER'')')}">
+    <h2>Tus cursos</h2>
+    <div class="course-list" th:each="curso : ${courses}">
+      <ul class="course-item">
+        <li th:text="${curso.name}"></li>
+      </ul>
+    </div>
+  </div>
+</main>
+<footer>
+  <p>© 2023 TRENdGYM - Todos los derechos reservados</p>
+</footer>
+<script src="/js/validator.js"></script>
+
+</body>
+</html>

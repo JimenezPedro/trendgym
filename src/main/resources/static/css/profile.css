@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:ital,wght@0,400;1,100;1,300&display=swap');
+
+body {
+    font-family: 'Roboto', 'SansSerif';
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(to right, #003974, #0056b3);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+header img{
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #000;
+    background-color: #fff;
+    margin: 20px;
+}
+
+header h1 {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px #000;
+}
+.perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.perfil .perfilUsuario{
+    font-family: 'Arial', sans-serif; /* Tipo de letra */
+    font-size: 24px; /* Tamaño de la fuente */
+    color: #4A90E2; /* Color del texto */
+    background-color: #ECEFF1; /* Color de fondo */
+    border-left: 5px solid #4A90E2; /* Borde izquierdo decorativo */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Espaciado externo */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera para profundidad */
+    text-align: center; /* Alineación del texto */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+ button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003d82;
+}
+
+main {
+    margin: 20px;
+    padding: 20px;
+}
+
+main img{
+    margin: 20px;
+    width: 200px; /* Ajusta según sea necesario */
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #000;
+}
+
+main .form-update {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+main form label, main form input {
+    margin: 5px;
+    font-size: 16px;
+}
+
+main form input{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+main form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 20%;
+}
+
+input:focus{
+    border-color: #4A90E2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+}
+
+main form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.imc-section {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imc-section h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    text-align: center;
+    background-color: #0056b3;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table td {
+    text-align: center;
+}
+
+#calendar {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    font-size: 0.9em;
+    max-height: 600px;
+    overflow: auto;
+}
+
+
+.courses-subscription {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+.course-list {
+    margin-top: 20px;
+}
+
+.course-item {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.course-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+
+footer {
+    background: linear-gradient(to right, #003974, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}

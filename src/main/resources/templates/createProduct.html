@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creación de Producto</title>
+  <link rel="stylesheet" href="/css/styleForm.css">
+  <link rel="icon" type="image/png" href="/img/logo.png">
+</head>
+<body th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+<header>
+  <a th:href="@{index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
+  <h1>TRENdGYM</h1>
+</header>
+<div class="register-wrapper">
+  <div class="login-container">
+    <form th:action="@{/creationProduct}" enctype="multipart/form-data" th:object="${product}" method="post">
+      <h2>Crear Producto</h2>
+      <br>
+      <div class="input-group">
+        <label for="name">Nombre del Producto</label>
+        <input type="text" id="name" name="name" th:field="*{name}" required>
+      </div>
+      <div class="input-group">
+        <label for="description">Descripción del curso</label>
+        <textarea name="description" id="description" cols="30" th:field="*{description}" rows="10" required></textarea>
+      </div>
+      <div class="input-group">
+        <label for="stock">Cantidad del producto en stock</label>
+        <input type="text" id="stock" name="stock" th:field="*{stock}" required>
+      </div>
+      <div class="input-group">
+        <label for="price">Precio del producto</label>
+        <input type="number" id="price" name="prcie" th:field="*{price}" required>
+      </div>
+      <div class="input-group">
+        <label for="img">Imagen del producto</label>
+        <input type="file" id="img" name="img" th:field="*{img}">
+      </div>
+      <button type="submit">Registrar producto</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Control</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="icon" type="image/png" href="/img/logo.png">
+</head>
+<body th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+<header>
+    <a th:href="@{index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
+    <h1>TRENdGYM</h1>
+</header>
+
+<div class="container">
+    <div class="column">
+        <a th:href="@{cursos}"><img src="/img/entrenamiento.png" alt="Cursos"></a>
+        <p>Cursos</p>
+    </div>
+    <div class="column">
+        <a th:href="@{usuarios}"><img src="/img/usersLogo.png" alt="Usuarios"></a>
+        <p>Usuarios</p>
+    </div>
+    <div class="column">
+        <a th:href="@{productos}"><img src="/img/productos.webp" alt="Productos"></a>
+        <p>Productos</p>
+    </div>
+</div>
+</body>
+</html>
