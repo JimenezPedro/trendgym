@@ -5,6 +5,8 @@ import com.example.proyectodaw2324f.user.User;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Base64;
+import java.util.List;
 
 
 @Service
@@ -25,6 +27,7 @@ public class CommentService {
         comment.setUser(user);
         comment.setPost(post);
 
+
         commentRepository.save(comment);
         return comment;
     }
@@ -32,5 +35,11 @@ public class CommentService {
     public void deleteCommentById(Long id){
         commentRepository.deleteById(id);
     }
+
+    public List<Comment> showComments(Post post){
+        List<Comment> comments = post.getComments();
+        return comments;
+    }
+
 
 }

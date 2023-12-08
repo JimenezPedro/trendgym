@@ -199,15 +199,13 @@ public class UserController {
     public String createComment(CommentDTO commentDTO, Model model,  Principal principal){
         User user = userService.findUserByUsername(principal.getName());
         Post post = postService.findPostById(commentDTO.getPostId()).get();
+        List<Comment> comments = commentService.showComments(post);
         Comment comment =commentService.saveComment(commentDTO,user,post);
-        post.getComments().add(comment);
-
-        String imgBase64 = Base64.getEncoder().encodeToString(post.getImg());
-        post.setImgBase64("data:image/jpeg;base64," + imgBase64);
+        comments.add(comment);
 
         model.addAttribute("post", post);
         model.addAttribute("commentDTO",new CommentDTO());
-        model.addAttribute("comments",post.getComments());
+        model.addAttribute("comments",comments);
 
         return "redirect:/Foro/" + commentDTO.getPostId();
     }
