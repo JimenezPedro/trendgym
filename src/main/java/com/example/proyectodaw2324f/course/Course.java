@@ -28,11 +28,6 @@ public class Course {
     @Transient
     private String imgBase64;
     @ManyToMany
-    @JoinTable(
-            name = "user_course",
-            joinColumns = @JoinColumn(name = "course_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id")
-    )
     private List<User> users;
 
 }

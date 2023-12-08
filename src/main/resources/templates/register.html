@@ -14,6 +14,7 @@
     <a th:href="@{index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
     <h1>TRENdGYM</h1>
 </header>
+
 <div class="register-wrapper">
     <div class="login-container">
         <p sec:authorize="isAuthenticated()">Ya estás registrado</p>
@@ -49,6 +50,16 @@
         </form>
     </div>
 </div>
+<footer>
+    <div class="footer-content">
+        <a th:href="@{politicaPrivacidad}">Política de Privacidad</a>
+        <a th:href="@{politicaCookies}">Política de Cookies</a>
+        <a th:href="@{acercaDe}">Acerca de</a>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2023 TRENdGYM - Todos los derechos reservados</p>
+    </div>
+</footer>
 <script src="/js/registerValidator.js"></script>
 <script src="/js/countries.js"></script>
 </body>

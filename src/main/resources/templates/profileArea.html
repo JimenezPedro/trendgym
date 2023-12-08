@@ -42,6 +42,7 @@
   <br>
   <form class="form-update" id="updateForm" th:action="@{update}" th:object="${user}" method="post" enctype="multipart/form-data" th:if="${#authorization.expression('hasAuthority(''USER'')')}">
     <h2>Actualiza tu perfil</h2>
+
     <label for="direccion">Dirección:</label>
     <input type="text" id="direccion" name="direccion" th:field="*{address}"><br><br>
 

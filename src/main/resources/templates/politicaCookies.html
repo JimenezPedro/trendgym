@@ -10,7 +10,17 @@
 <header>
     <h1>Política de Cookies</h1>
 </header>
-
+<nav>
+    <ul>
+        <li><a th:href="@{index}">Inicio</a></li>
+        <li><a th:href="@{tienda}">Merchandising</a></li>
+        <li><a th:href="@{courses}">Zona Entrenamiento</a></li>
+        <li><a th:href="@{Foro}">Foro Comunidad</a></li>
+        <li th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+            <a th:href="@{panelControl}">Panel de control</a>
+        </li>
+    </ul>
+</nav>
 
 <section>
     <h2>¿Qué son las Cookies?</h2>

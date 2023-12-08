@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Getter
 @Setter
 public class UserDTO {
+    private String password;
     private String address;
     private String city;
     private MultipartFile img;

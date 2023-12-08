@@ -11,7 +11,16 @@
     <a th:href="@{index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
     <h1>TRENdGYM</h1>
 </header>
-
+<nav>
+    <ul>
+        <li><a th:href="@{tienda}">Merchandising</a></li>
+        <li><a th:href="@{courses}">Zona Entrenamiento</a></li>
+        <li><a th:href="@{Foro}">Foro Comunidad</a></li>
+        <li th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+            <a th:href="@{panelControl}">Panel de control</a>
+        </li>
+    </ul>
+</nav>
 <div class="container">
     <div class="column">
         <a th:href="@{cursos}"><img src="/img/entrenamiento.png" alt="Cursos"></a>

@@ -77,7 +77,6 @@ public class UserService implements UserDetailsService {
          double imc = userDTO.getWeight()/Math.pow(heightMetres,2);
          double imcRound = (double) Math.round(imc * 100) /100;
 
-
          userR.setAddress(userDTO.getAddress());
          userR.setCity(userDTO.getCity());
          userR.setHeight(userDTO.getHeight());
@@ -121,7 +120,7 @@ public class UserService implements UserDetailsService {
         }
     }
 
-    public void suscribeCourse(Long userId, Long courseId){
+    public void subscribeCourse(Long userId, Long courseId){
         User user = userRepository.findById(userId).get();
         Course course = courseRepository.findById(courseId).get();
 
@@ -136,7 +135,7 @@ public class UserService implements UserDetailsService {
         courseRepository.save(course);
     }
 
-    public void cancelSuscription(Long userId, Long courseId){
+    public void cancelSubscription(Long userId, Long courseId){
         User user = userRepository.findById(userId).get();
         Course course = courseRepository.findById(courseId).get();
 
@@ -150,5 +149,7 @@ public class UserService implements UserDetailsService {
     public boolean findUsername(String username){
         return userRepository.existsByUsername(username);
     }
+
+
 
 }

@@ -11,6 +11,7 @@
     <a th:href="@{../index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
   <h1>TRENdGYM</h1>
 </header>
+
 <div class="container">
   <h1 th:text="${curso.name}">Nombre del Curso</h1>
   <div class="video-container">
@@ -32,7 +33,16 @@
             </form>
         </div>
     </div>
-
 </div>
+<footer>
+    <div class="footer-content">
+        <a th:href="@{politicaPrivacidad}">Política de Privacidad</a>
+        <a th:href="@{politicaCookies}">Política de Cookies</a>
+        <a th:href="@{acercaDe}">Acerca de</a>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2023 TRENdGYM - Todos los derechos reservados</p>
+    </div>
+</footer>
 </body>
 </html>

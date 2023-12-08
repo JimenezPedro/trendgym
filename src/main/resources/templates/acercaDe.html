@@ -11,6 +11,17 @@
 <header>
     <h1>IES Trassierra</h1>
 </header>
+<nav>
+    <ul>
+        <li><a th:href="@{index}">Inicio</a></li>
+        <li><a th:href="@{tienda}">Merchandising</a></li>
+        <li><a th:href="@{courses}">Zona Entrenamiento</a></li>
+        <li><a th:href="@{Foro}">Foro Comunidad</a></li>
+        <li th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+            <a th:href="@{panelControl}">Panel de control</a>
+        </li>
+    </ul>
+</nav>
 <main>
     <img src="/img/IMG_0010.jpg" alt="Tu Imagen">
     <h2>Pedro Jiménez Zamorano</h2>

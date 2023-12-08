@@ -10,6 +10,16 @@
     <a th:href="@{index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
     <h1>TRENdGYM</h1>
 </header>
+<nav>
+    <ul>
+        <li><a th:href="@{index}">Inicio</a></li>
+        <li><a th:href="@{tienda}">Merchandising</a></li>
+        <li><a th:href="@{Foro}">Foro Comunidad</a></li>
+        <li th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+            <a th:href="@{panelControl}">Panel de control</a>
+        </li>
+    </ul>
+</nav>
 <div class="contenedor">
     <div class="contenedor-cursos">
         <div class="columna-curso"  th:each="course : ${courses}">
@@ -21,5 +31,15 @@
         </div>
     </div>
 </div>
+<footer>
+    <div class="footer-content">
+        <a th:href="@{politicaPrivacidad}">Política de Privacidad</a>
+        <a th:href="@{politicaCookies}">Política de Cookies</a>
+        <a th:href="@{acercaDe}">Acerca de</a>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2023 TRENdGYM - Todos los derechos reservados</p>
+    </div>
+</footer>
 </body>
 </html>
