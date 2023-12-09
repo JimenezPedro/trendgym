@@ -18,8 +18,12 @@
     <div class="video-container">
         <img th:src="${producto.imgBase64}" alt="Imagen del producto">
     </div>
-    <p class="description" th:text="${producto.description}">Descripción del producto</p>
+    <div>
+        <p class="description" th:text="${producto.description}">Descripción del producto</p>
+        <p>Tlf: +34 600 00 00 06</p>
+    </div>
 </div>
+
 <footer>
     <div class="footer-content">
         <a th:href="@{politicaPrivacidad}">Política de Privacidad</a>

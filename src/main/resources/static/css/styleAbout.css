@@ -82,3 +82,54 @@ footer p {
     margin: 0;
     font-size: 16px;
 }
+
+
+/* Estilos para pantallas de 768px y menos */
+
+@media screen and (max-width: 768px) {
+    header {
+        font-size: 1.5em;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
+
+/* Estilos para pantallas de 480px y menos */
+
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 1.2em;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    main {
+        padding: 5px;
+    }
+}
