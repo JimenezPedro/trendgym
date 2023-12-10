@@ -27,7 +27,7 @@ public class CourseService {
     public void initialCourses()throws IOException{
 
         Course course1 = new Course();
-        String rutaImagen = "src/main/resources/static/img/CursoDefinición.png";
+        String rutaImagen = "src/main/resources/static/img/CursoDefinicion.png";
         Path path = Paths.get(rutaImagen);
         byte[] bytes = Files.readAllBytes(path);
 

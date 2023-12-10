@@ -90,7 +90,7 @@ public class PostService {
 
         Post post1 = new Post();
 
-        String rutaImagen = "src/main/resources/static/img/CursoDefinición.png";
+        String rutaImagen = "src/main/resources/static/img/CursoDefinicion.png";
         Path path = Paths.get(rutaImagen);
         byte[] bytes = Files.readAllBytes(path);
 
