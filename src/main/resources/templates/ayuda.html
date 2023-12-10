@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Política de Cookies</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="icon" type="image/png" href="/img/logo.png">
+</head>
+<body>
+<header>
+    <h1>Ayuda al usuario e información relevante</h1>
+</header>
+<nav>
+    <ul>
+        <li><a th:href="@{index}">Inicio</a></li>
+        <li><a th:href="@{tienda}">Merchandising</a></li>
+        <li><a th:href="@{courses}">Zona Entrenamiento</a></li>
+        <li><a th:href="@{Foro}">Foro Comunidad</a></li>
+        <li th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
+            <a th:href="@{panelControl}">Panel de control</a>
+        </li>
+    </ul>
+</nav>
+
+<section>
+    <h2>¿Qué fin tiene esta web?</h2>
+    <p>
+        En la era digital actual, mantener un estilo de vida saludable y activo es más accesible que nunca, gracias a plataformas innovadoras como TRENdGYM. Diseñado para aquellos que
+        buscan transformar su bienestar desde la comodidad de sus hogares, TRENdGYM se erige como un gimnasio online revolucionario que va más allá de la simple rutina de ejercicios.
+    </p>
+</section>
+
+<section>
+    <h2>¿Qué puedes encontrar en los cursos online?</h2>
+    <p>
+        En el corazón de TRENdGYM se encuentran sus cursos online, una vasta selección de programas diseñados para adaptarse a todos los niveles de aptitud física. Ya sea que seas un
+        principiante que busca introducirse en el mundo del fitness o un experto en busca de desafíos más avanzados, encontrarás programas específicos que se ajustan a tus necesidades y
+        metas. Desde entrenamientos de alta intensidad hasta sesiones de yoga relajantes, TRENdGYM ofrece una variedad de opciones para diversificar tu rutina de ejercicio.
+    </p>
+</section>
+
+<section>
+    <h2>¿Qué encontrarás en nuestro foro de la comunidad?</h2>
+    <p>
+        TRENdGYM va más allá de ser solo un gimnasio en línea; es una comunidad dinámica que une a entusiastas del fitness de todo el mundo.
+        La plataforma te brinda la oportunidad de conectarte con otros miembros a través de su comunidad integrada. Comparte tus logros, busca motivación,
+        y forma parte de conversaciones que te inspirarán en tu viaje hacia un estilo de vida más saludable. La comunidad TRENdGYM es el lugar perfecto para intercambiar consejos,
+        recibir apoyo y celebrar tus éxitos.
+    </p>
+</section>
+<section>
+    <h2>Sube publicaciones y celebra tu progreso</h2>
+    <p>
+        ¿Lograste superar tu récord personal en una rutina de ejercicios?,¿Quieres compartir tu experiencia con una receta saludable que te encanta?<br>
+         Con TRENdGYM, tienes la oportunidad de subir publicaciones y celebrar cada hito en tu viaje fitness.
+        Comparte tus fotos, consejos de entrenamiento o cualquier logro que desees destacar. La comunidad TRENdGYM está aquí para aplaudir tus esfuerzos y motivarte a seguir avanzando.
+    </p>
+</section>
+<section>
+    <h2>Transforma Tu Vida con TRENdGYM</h2>
+    <p>
+        En resumen, TRENdGYM no es solo un gimnasio en línea; es un ecosistema completo diseñado para ayudarte a alcanzar tus metas fitness y conectar con personas que comparten tu pasión
+        por un estilo de vida activo y saludable. Descubre la comodidad y flexibilidad de ejercitarte desde cualquier lugar, y únete a una comunidad que te inspirará a superar tus límites.
+        <br>¡Transforma tu vida hoy mismo con TRENdGYM!
+    </p>
+</section>
+<footer>
+    <div class="footer-content">
+        <p>© 2023 TRENdGYM - Todos los derechos reservados</p>
+    </div>
+</footer>
+
+</body>
+</html>
