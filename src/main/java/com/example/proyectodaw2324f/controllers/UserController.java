@@ -23,6 +23,9 @@ import java.security.Principal;
 import java.util.*;
 
 
+/**
+ * Controlador del usuario
+ */
 @Controller
 public class UserController {
 

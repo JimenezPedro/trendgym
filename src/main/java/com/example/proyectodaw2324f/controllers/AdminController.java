@@ -2,16 +2,16 @@ package com.example.proyectodaw2324f.controllers;
 
 import com.example.proyectodaw2324f.course.Course;
 import com.example.proyectodaw2324f.course.CourseService;
-import com.example.proyectodaw2324f.dto.CommentDTO;
+
 import com.example.proyectodaw2324f.dto.CourseDTO;
 import com.example.proyectodaw2324f.dto.PostDTO;
 import com.example.proyectodaw2324f.dto.ProductDTO;
 import com.example.proyectodaw2324f.foro.CommentService;
-import com.example.proyectodaw2324f.foro.Post;
+
 import com.example.proyectodaw2324f.foro.PostService;
 import com.example.proyectodaw2324f.product.Product;
 import com.example.proyectodaw2324f.product.ProductService;
-import com.example.proyectodaw2324f.user.UserRepository;
+
 import com.example.proyectodaw2324f.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +20,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+/**
+ * Controlador del administrador
+ */
 
 @Controller
 public class AdminController {

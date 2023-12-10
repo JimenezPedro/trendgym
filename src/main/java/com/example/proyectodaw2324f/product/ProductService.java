@@ -20,6 +20,10 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
+    /**
+     * Método que genera productos al iniciar la app
+     * @throws Exception excepción lanzada por image.getBytes()
+     */
     public void generateProducts() throws Exception{
         Product product1 = new Product();
         String rutaImagen1 = "src/main/resources/static/img/cinturon.png";
@@ -67,6 +71,11 @@ public class ProductService {
 
     }
 
+    /**
+     * Método para registrar producto
+     * @param productDTO objeto del producto
+     * @throws Exception lanzada por image.getBytes()
+     */
     public void registerProduct(ProductDTO productDTO) throws Exception {
         Product product = new Product();
 
@@ -87,6 +96,10 @@ public class ProductService {
 
     }
 
+    /**
+     * Método que muestra una lista de los productos
+     * @return una lista de productos
+     */
     public List<Product> showProducts(){
        List<Product> products = productRepository.findAll();
         products.forEach(producto -> {
@@ -98,10 +111,19 @@ public class ProductService {
        return products;
     }
 
+    /**
+     * Obtener un producto por su id
+     * @param id id del producto
+     * @return
+     */
     public Optional<Product> getProductById(Long id){
         return productRepository.findById(id);
     }
 
+    /**
+     * Eliminar el producto por id
+     * @param id id del producto
+     */
     public void deleteProductById(Long id){
         productRepository.deleteById(id);
     }

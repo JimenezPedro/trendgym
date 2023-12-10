@@ -134,10 +134,17 @@ public class UserService implements UserDetailsService {
         return users;
     }
 
+    /**
+     * Eliminar un usuario por su id
+     * @param id id del usuario
+     */
     public void deleteUserById(Long id){
         userRepository.deleteById(id);
     }
 
+    /**
+     * Iniciar el usuario administrador al arrancar
+     */
     public void registerAdminUser(){
         User user = new User();
         if(userRepository.findByUsername("admin") == null){
@@ -152,6 +159,11 @@ public class UserService implements UserDetailsService {
         }
     }
 
+    /**
+     * El método que relaciona usuario con curso a través de los ids para apuntar a un usuario a un curso
+     * @param userId id del usuario
+     * @param courseId id del curso
+     */
     public void subscribeCourse(Long userId, Long courseId){
         User user = userRepository.findById(userId).get();
         Course course = courseRepository.findById(courseId).get();
@@ -167,6 +179,11 @@ public class UserService implements UserDetailsService {
         courseRepository.save(course);
     }
 
+    /**
+     * El método para cancelar la suscripción a un curso
+     * @param userId id del usuario
+     * @param courseId id del curso
+     */
     public void cancelSubscription(Long userId, Long courseId){
         User user = userRepository.findById(userId).get();
         Course course = courseRepository.findById(courseId).get();
@@ -178,10 +195,13 @@ public class UserService implements UserDetailsService {
         courseRepository.save(course);
     }
 
+    /**
+     * Método para encontrar un usuario por su nombre de usuario
+     * @param username nombre de usuario
+     * @return devuelve true o false según si lo encuentra o no
+     */
     public boolean findUsername(String username){
         return userRepository.existsByUsername(username);
     }
-
-
 
 }

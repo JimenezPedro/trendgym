@@ -29,6 +29,12 @@ public class PostService {
         this.userRepository = userRepository;
     }
 
+    /**
+     * Método que guardar un post en la base de datos
+     * @param postDTO Objeto publicación
+     * @param user Objeto usuario
+     * @throws Exception lanza una excepción por el método getBytes()
+     */
     public void savePost(PostDTO postDTO, User user) throws Exception{
         Post post = new Post();
 
@@ -42,10 +48,19 @@ public class PostService {
         postRepository.save(post);
     }
 
+    /**
+     * Encontrar un post por su id
+     * @param id id del post
+     * @return un post
+     */
     public Optional<Post> findPostById(Long id){
         return postRepository.findById(id);
     }
 
+    /**
+     * Método para mostrar todos los post en una lista
+     * @return una lista de posts
+     */
     public List<Post> showPosts(){
         List<Post> posts = postRepository.findAll();
         posts.forEach(post -> {
@@ -57,12 +72,20 @@ public class PostService {
         return posts;
     }
 
+    /**
+     * Borrar un post por id
+     * @param id id del post a eliminar
+     */
     public void deletePostById(Long id){
         Post post = postRepository.findById(id).get();
         post.getComments().clear();
         postRepository.deleteById(id);
     }
 
+    /**
+     * Método para inicializar algunos posts de ejemplo
+     * @throws Exception excepción lanzada por image.getBytes()
+     */
     public void generatePosts() throws Exception{
 
         Post post1 = new Post();
