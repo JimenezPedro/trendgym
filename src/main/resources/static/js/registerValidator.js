@@ -1,13 +1,17 @@
-document.querySelector('form').addEventListener('submit', function(e) {
+
+document.getElementById('username').addEventListener('focus', function (){
+    document.getElementById('errorNombreUsuario').style.display='none';
+});
+
+document.getElementById('password').addEventListener('keypress', function() {
     let contrasenia = document.getElementById('password').value;
 
     if (contrasenia.length < 8 || !contieneMayusculas(contrasenia) || !contieneMinusculas(contrasenia) || !contieneNumeros(contrasenia)) {
-        e.preventDefault();
-        Swal.fire({
-            text: 'La contraseña debe tener como mínimo 8 caracteres, usar mayúsuculas, minúsculas y números.',
-            icon: 'error',
-            confirmButtonText: 'Aceptar',
-        });
+        document.getElementById('errorContrasenia').style.display = "block";
+        document.getElementById('verificarBtn').disabled=true;
+    }else{
+        document.getElementById('errorContrasenia').style.display = "none";
+        document.getElementById('verificarBtn').disabled=false;
     }
 
     function contieneMayusculas(str) {

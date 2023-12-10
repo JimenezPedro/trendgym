@@ -29,6 +29,11 @@ public class UserService implements UserDetailsService {
         this.courseRepository = courseRepository;
     }
 
+    /**
+     * Función para encontrar un usuario por su nombre de Usuario
+     * @param username cadena que representa el nombre de usuario
+     * @return retorna un usuario o una excepción
+     */
     public User findUserByUsername(String username){
         User user = userRepository.findByUsername(username);
         if(user!=null){
@@ -38,7 +43,11 @@ public class UserService implements UserDetailsService {
         }
     }
 
-    public void registerUser(UserRegisterDTO userRegisterDTO){
+    /**
+     * Función para registrar un usuario
+     * @param userRegisterDTO representa el objeto usuario que quedará almacenado en la base de datos
+     */
+    public boolean registerUser(UserRegisterDTO userRegisterDTO){
         User user = new User();
         if(StringUtils.isBlank(userRegisterDTO.getUsername())){
             throw new IllegalArgumentException("El nombre de usuario no puede estar vacío");
@@ -59,8 +68,13 @@ public class UserService implements UserDetailsService {
         user.setCountry(userRegisterDTO.getCountry());
         user.setRole(Role.USER);
         userRepository.save(user);
+        return true;
     }
 
+    /**
+     * Función para obtener el usuario con la sesión iniciada
+     * @return un usuario si se encuentra, en caso contrario, un null
+     */
     public User returnUser(){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
@@ -70,24 +84,38 @@ public class UserService implements UserDetailsService {
         }else{
             return null;
         }
-     }
+    }
+
+
+    /**
+     * Función para actualizar el ususario en el área de perfil
+     * @param userDTO representa el usuario del que queremos añadir información en la BDD
+     * @throws Exception excepción necesaria al usar el método .getBytes()
+     */
     public void updateUser(UserDTO userDTO) throws Exception{
-         User userR = returnUser();
-         double heightMetres = userDTO.getHeight()/100.0;
-         double imc = userDTO.getWeight()/Math.pow(heightMetres,2);
-         double imcRound = (double) Math.round(imc * 100) /100;
+        User userR = returnUser();
+        double heightMetres = userDTO.getHeight()/100.0;
+        double imc = userDTO.getWeight()/Math.pow(heightMetres,2);
+        double imcRound = (double) Math.round(imc * 100) /100;
 
-         userR.setAddress(userDTO.getAddress());
-         userR.setCity(userDTO.getCity());
-         userR.setHeight(userDTO.getHeight());
-         userR.setWeight(userDTO.getWeight());
-         userR.setImc(imcRound);
-         if(!userDTO.getImg().isEmpty()) {
-             userR.setImg(userDTO.getImg().getBytes());
-         }
-         userRepository.save(userR);
+        userR.setAddress(userDTO.getAddress());
+        userR.setCity(userDTO.getCity());
+        userR.setHeight(userDTO.getHeight());
+        userR.setWeight(userDTO.getWeight());
+        userR.setImc(imcRound);
+        if(!userDTO.getImg().isEmpty()) {
+            userR.setImg(userDTO.getImg().getBytes());
+        }
+        userRepository.save(userR);
 
-     }
+    }
+
+    /**
+     *
+     * @param username cadena que representa el nombre de usuario
+     * @return un usuario que coincida con el username que le hemos pasado
+     * @throws UsernameNotFoundException excepción que se lanza si no existe el usuario en la BDD
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
@@ -97,6 +125,10 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<User> userList(){
         List<User> users = userRepository.findAll();
         return users;

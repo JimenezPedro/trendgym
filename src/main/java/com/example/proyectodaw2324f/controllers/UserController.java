@@ -13,6 +13,7 @@ import com.example.proyectodaw2324f.user.User;
 import com.example.proyectodaw2324f.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -53,7 +54,13 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@ModelAttribute UserRegisterDTO userRegisterDTO){
+    public String registerUser(@ModelAttribute("user") UserRegisterDTO userRegisterDTO,Model model){
+        boolean nombreUsuarioExistente = userService.findUsername(userRegisterDTO.getUsername());
+        if (nombreUsuarioExistente) {
+            model.addAttribute("errorNombreUsuario", "El nombre de usuario ya está en uso.");
+            return "register";
+        }
+
         userService.registerUser(userRegisterDTO);
         return "redirect:login";
     }
@@ -221,5 +228,6 @@ public class UserController {
         userService.cancelSubscription(user.getId(),courseDTO.getId());
         return "redirect:/courses/" + courseDTO.getId();
     }
+
 
 }

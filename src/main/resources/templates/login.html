@@ -17,7 +17,7 @@
         <p sec:authorize="isAuthenticated()">Ya has iniciado sesión</p>
         <form th:action="@{/login}" method="post" sec:authorize="!isAuthenticated()">
             <h2>Iniciar Sesión</h2>
-            <div class="login-errors" th:if="${param.error}">Credenciales incorrectas</div>
+            <p id="loginError" th:if="${param.error}" th:text="'Credenciales incorrectas'"></p>
             <br>
             <div class="input-group">
                 <label for="username">Nombre de Usuario</label>
@@ -44,5 +44,6 @@
         <p>© 2023 TRENdGYM - Todos los derechos reservados</p>
     </div>
 </footer>
+<script src="/js/loginValidator.js"></script>
 </body>
 </html>
