@@ -38,7 +38,7 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
     @Lob
-    @Column(length = 100000)
+    @Column(length = 1000000)
     private byte[] img;
     @ManyToMany(mappedBy = "users")
     private List<Course> courses;
