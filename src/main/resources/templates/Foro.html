@@ -33,7 +33,7 @@
 
             <div class="form-group">
                 <label for="img" class="image-upload-label">Sube una imagen</label>
-                <input type="file" id="img" name="imagen" accept="image/*" th:field="*{img}" class="image-upload">
+                <input type="file" id="img" name="imagen" onchange="validateImageSize()" accept="image/*" th:field="*{img}" class="image-upload">
                 <p id="errorMessage"></p>
             </div>
 

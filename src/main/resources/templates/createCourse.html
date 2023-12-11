@@ -35,7 +35,7 @@
             </div>
             <div class="input-group">
                 <label for="img">Imagen del curso</label>
-                <input type="file" id="img" name="img" th:field="*{img}">
+                <input type="file" id="img" onchange="validateImageSize()" name="img" th:field="*{img}">
                 <p id="errorMessage"></p>
             </div>
             <button type="submit">Registrar curso</button>
