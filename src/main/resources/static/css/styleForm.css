@@ -259,10 +259,8 @@ footer {
         font-size: 24px;
     }
 
-
-    .expositor-productos.container {
-        width: 100%;
-        padding: 0 10px;
+    .expositor-productos {
+        display: none;
     }
 }
 
