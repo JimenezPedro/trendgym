@@ -88,6 +88,10 @@ nav ul li a:hover {
     color: red;
 }
 
+#errorMessage{
+    color: red;
+}
+
 .login-container {
     background-color: white;
     padding: 20px;
