@@ -32,8 +32,9 @@
             </div>
 
             <div class="form-group">
-                <label for="imagen" class="image-upload-label">Sube una imagen</label>
-                <input type="file" id="imagen" name="imagen" accept="image/*" th:field="*{img}" class="image-upload">
+                <label for="img" class="image-upload-label">Sube una imagen</label>
+                <input type="file" id="img" name="imagen" accept="image/*" th:field="*{img}" class="image-upload">
+                <p id="errorMessage"></p>
             </div>
 
             <div sec:authorize="!isAuthenticated()" >
@@ -72,5 +73,6 @@
         <p>© 2023 TRENdGYM - Todos los derechos reservados</p>
     </div>
 </footer>
+<script src="/js/imageValidator.js"></script>
 </body>
 </html>
