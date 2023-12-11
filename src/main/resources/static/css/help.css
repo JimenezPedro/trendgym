@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:ital,wght@0,400;1,100;1,300&display=swap');
+
+body {
+    font-family: 'Roboto', 'SansSerif';
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+header {
+    background: linear-gradient(to right, #003974, #0056b3);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #000;
+    background-color: #fff;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+    color: #fff;
+}
+
+.user-profile a img{
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .login-register a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+header .login-register span {
+    color: white;
+    margin: 0 10px;
+}
+
+nav {
+    background-color: #e3e3e3;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #d2d2d2;
+    border-radius: 5px;
+}
+
+
+
+
+footer {
+    background: linear-gradient(to right, #003974, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom p {
+    margin: 10px 0 0;
+    font-size: 14px;
+}
+
+
+@media screen and (max-width: 1280px){
+
+    .productos{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        font-size: 1.5em;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    section{
+        padding: 10px;
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+
+}

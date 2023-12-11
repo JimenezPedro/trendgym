@@ -84,7 +84,7 @@ footer p {
 }
 
 
-/* Estilos para pantallas de 768px y menos */
+
 
 @media screen and (max-width: 768px) {
     header {
@@ -108,8 +108,6 @@ footer p {
         padding: 10px;
     }
 }
-
-/* Estilos para pantallas de 480px y menos */
 
 @media screen and (max-width: 480px) {
     header {
