@@ -78,6 +78,11 @@ nav ul li a:hover {
     display: none;
 }
 
+#errorContraseniaRe{
+    color: red;
+    display: none;
+}
+
 #errorNombreUsuario{
     color: red;
 }

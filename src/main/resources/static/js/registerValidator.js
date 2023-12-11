@@ -25,8 +25,19 @@ document.getElementById('password').addEventListener('keypress', function() {
     function contieneNumeros(str) {
         return /[0-9]/.test(str);
     }
-
 });
 
+document.getElementById('passwordRe').addEventListener('keypress', function (){
+    let contrasenia = document.getElementById('password').value;
+    let contraseniaRe = document.getElementById('passwordRe').value;
 
+    if (contrasenia == contraseniaRe) {
+        document.getElementById('verificarBtn').disabled = true;
+        document.getElementById('errorContraseniaRe').style.display='block';
+    }else{
+        document.getElementById('verificarBtn').disabled = false;
+        document.getElementById('errorContraseniaRe').style.display='none';
+    }
+
+})
 
