@@ -56,9 +56,9 @@
     <input type="number" id="peso" name="peso" th:field="*{weight}"><br><br>
 
     <label for="img">Imagen de perfil:</label>
-    <input type="file" id="img" name="img"  accept="image/*"><br><br>
-
-    <input type="submit" value="Actualizar">
+    <input type="file" id="img" name="img" onchange="validateImageSize()" accept="image/*"><br><br>
+    <p id="errorMessage"></p>
+    <input type="submit"  value="Actualizar">
   </form>
   <div class="imc-section" th:if="${#authorization.expression('hasAuthority(''USER'')')}">
     <br>

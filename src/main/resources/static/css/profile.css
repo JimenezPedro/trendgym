@@ -214,6 +214,9 @@ ul, li {
     padding: 0;
 }
 
+#errorMessage{
+    color:red;
+}
 
 footer {
     background: linear-gradient(to right, #003974, #0056b3);
