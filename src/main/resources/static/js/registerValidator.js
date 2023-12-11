@@ -27,7 +27,7 @@ document.getElementById('password').addEventListener('keypress', function() {
     }
 });
 
-document.getElementById('passwordRe').addEventListener('keypress', function (){
+document.getElementById('passwordRe').addEventListener('input', function (){
     let contrasenia = document.getElementById('password').value;
     let contraseniaRe = document.getElementById('passwordRe').value;
 
