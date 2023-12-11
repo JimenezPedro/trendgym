@@ -31,7 +31,7 @@ document.getElementById('passwordRe').addEventListener('keypress', function (){
     let contrasenia = document.getElementById('password').value;
     let contraseniaRe = document.getElementById('passwordRe').value;
 
-    if (contrasenia == contraseniaRe) {
+    if (contrasenia !== contraseniaRe) {
         document.getElementById('verificarBtn').disabled = true;
         document.getElementById('errorContraseniaRe').style.display='block';
     }else{
