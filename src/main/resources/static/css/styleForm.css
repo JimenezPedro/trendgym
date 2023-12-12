@@ -224,5 +224,21 @@ footer {
     font-size: 14px;
 }
 
+@media screen and (max-width: 1280px) {
+    .register-wrapper{
+        margin: 100px;
+    }
+}
 
+@media screen and (max-width: 768px) {
+    .register-wrapper{
+        margin: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .register-wrapper{
+        margin: 100px;
+    }
+}
 
