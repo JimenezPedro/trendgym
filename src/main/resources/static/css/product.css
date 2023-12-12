@@ -7,22 +7,17 @@ body {
     background-color: #f4f4f4;
 }
 
-
 header {
     background: linear-gradient(to right, #003974, #0056b3);
     color: white;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+
 }
 
-header .logo {
-    display: flex;
-    align-items: center;
-}
 
-header .logo img {
+header img {
     width: 100px;
     height: auto;
     margin-right: 15px;
@@ -31,35 +26,12 @@ header .logo img {
     background-color: #fff;
 }
 
-header .logo h1 {
+header h1 {
     margin: 0;
     font-size: 28px;
     font-weight: bold;
     text-shadow: 1px 1px 2px #000;
     color: #fff;
-}
-
-.user-profile a img{
-    width: 60px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.user-profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-header .login-register a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-}
-
-header .login-register span {
-    color: white;
-    margin: 0 10px;
 }
 
 nav {
@@ -89,81 +61,75 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-.banner {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.banner img {
+.price{
+    background-color: #5149f5;
+    width: 18%;
+    height: 1.5em;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    color: #f1e9e9;
+    text-align: center;
+}
+
+.product-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 3.5em;
+}
+
+.product-container img{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
-.container{
-    overflow-x: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &>div,
-    &>section {
-        width: 65%;
-    }
+    border: none;
 }
 
-.about p{
-    padding: 20px;
-}
-
-section{
-    padding: 10px;
-}
-
-
-.expositor-productos {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.productos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.productos img {
-    max-width: 400px;
-    height: auto;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-
-.expositor-productos h2 {
-    text-align: center;
+h1 {
     font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #007bff;
 }
-
-
-.productos img::after {
-    content: attr(alt);
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+.description {
     font-size: 16px;
+    margin-bottom: 20px;
 }
 
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.already-subscribed-message {
+    color: red;
+    margin-bottom: 10px;
+}
 
 footer {
     background: linear-gradient(to right, #003974, #0056b3);
@@ -189,14 +155,6 @@ footer {
     font-size: 14px;
 }
 
-
-@media screen and (max-width: 1280px){
-
-    .productos{
-        display: flex;
-        flex-direction: column;
-    }
-}
 
 @media screen and (max-width: 768px) {
     header {
@@ -224,22 +182,11 @@ footer {
         text-align: center;
     }
 
-    .about p{
-        padding: 5px;
+    .container{
+        margin-bottom: 150px;
     }
 
-    .expositor-productos {
-        display: none;
-    }
-}
-
-
-@media screen and (max-width: 480px) {
-    header h1 {
-        font-size: 24px;
-    }
-
-    .expositor-productos {
-        display: none;
+    .price{
+        width: 25%;
     }
 }

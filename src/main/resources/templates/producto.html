@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${producto.name}">Producto</title>
-    <link rel="stylesheet" href="/css/course.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/product.css">
     <link rel="icon" type="image/png" href="/img/logo.png">
 </head>
 <body>
@@ -14,13 +15,15 @@
 
 <div class="container">
     <h1 th:text="${producto.name}">Nombre del producto</h1>
-    <p th:text="'PRECIO: ' + ${producto.price} + '€'">Precio del curso</p>
-    <div class="video-container">
+    <div class="product-container">
         <img th:src="${producto.imgBase64}" alt="Imagen del producto">
     </div>
     <div>
         <p class="description" th:text="${producto.description}">Descripción del producto</p>
+        <p>Si quieres algún producto no dudes en contactarme</p>
         <p>Tlf: +34 600 00 00 06</p>
+        <p>Correo: pedrojz98@gmail.com</p>
+        <p class="price" th:text="'PRECIO: ' + ${producto.price} + '€'">Precio del curso</p>
     </div>
 </div>
 
