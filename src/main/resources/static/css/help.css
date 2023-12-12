@@ -60,6 +60,13 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center;
+}
+
 section{
     padding: 10px;
 }
@@ -99,13 +106,22 @@ footer {
 
 
     nav ul {
-        display: flex;
+        display: none;
         flex-direction: column;
-        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
     }
 
     nav ul li {
-        text-align: center;
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
     }
 
     section {
@@ -119,15 +135,6 @@ footer {
         padding: 10px;
     }
 
-    nav ul{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    nav ul li{
-        text-align: center;
-    }
 
     section{
         padding: 15px;

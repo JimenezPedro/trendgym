@@ -50,6 +50,13 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center;
+}
+
 main {
     margin: 20px;
     padding: 20px;
@@ -92,16 +99,23 @@ footer p {
         padding: 10px;
     }
 
-
-
-    nav ul{
-        display: flex;
+    nav ul {
+        display: none;
         flex-direction: column;
-        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
-    nav ul li{
-        text-align: center;
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
     }
 
     main h2{

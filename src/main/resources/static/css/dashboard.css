@@ -60,10 +60,15 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center;
+}
 
 .container {
     display: flex;
-    justify-content: center;
     align-items: center;
     justify-content: space-between;
     height: 70vh;
@@ -143,14 +148,23 @@ footer {
         padding: 20px;
         margin: 10px;
     }
-    nav ul{
-        display: flex;
+    nav ul {
+        display: none;
         flex-direction: column;
-        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
-    nav ul li{
-        text-align: center;
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
     }
 }
 
@@ -173,13 +187,5 @@ footer {
         padding: 20px;
         margin: 10px;
     }
-    nav ul{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
 
-    nav ul li{
-        text-align: center;
-    }
 }
