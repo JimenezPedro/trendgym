@@ -86,19 +86,10 @@ nav ul li a:hover {
     border: none;
 }
 
-.video-container img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
 h1 {
     font-size: 28px;
     margin-bottom: 10px;
-    color: #007bff; 
+    color: #007bff;
 }
 .description {
     font-size: 16px;
@@ -257,4 +248,34 @@ footer {
 .footer-bottom p {
     margin: 10px 0 0;
     font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    header .logo img {
+        margin-right: 0;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav ul li{
+        text-align: center;
+    }
+
+    .container{
+        margin-bottom: 150px;
+    }
+
+    .price{
+        width: 35%;
+    }
 }
