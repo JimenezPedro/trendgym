@@ -98,6 +98,26 @@ footer {
     }
 
 
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        text-align: center;
+        padding: 10px;
+    }
 
     nav ul{
         display: flex;
@@ -112,7 +132,6 @@ footer {
     section{
         padding: 15px;
     }
-
 }
 
 
