@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos</title>
     <link rel="stylesheet" href="/css/styleCourses.css">
+    <link rel="icon" type="image/png" href="/img/logo.png">
 </head>
 <body>
 <header>
@@ -22,7 +23,9 @@
     </ul>
 </nav>
 <div class="contenedor">
-    <p sec:authorize="!isAuthenticated()">¡Inicia sesión o regístrate para ver nuestros cursos y suscribirte a ellos!</p>
+    <div class="message" sec:authorize="!isAuthenticated()">
+        <p>¡Inicia sesión o regístrate para ver nuestros cursos y suscribirte a ellos!</p>
+    </div>
     <div class="contenedor-cursos">
         <div class="columna-curso"  th:each="course : ${courses}">
             <a th:href="@{/courses/{id}(id=${course.id})}">
