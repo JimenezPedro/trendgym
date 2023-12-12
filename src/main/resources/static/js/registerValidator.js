@@ -3,7 +3,7 @@ document.getElementById('username').addEventListener('focus', function (){
     document.getElementById('errorNombreUsuario').style.display='none';
 });
 
-document.getElementById('password').addEventListener('keypress', function() {
+document.getElementById('password').addEventListener('input', function() {
     let contrasenia = document.getElementById('password').value;
 
     if (contrasenia.length < 8 || !contieneMayusculas(contrasenia) || !contieneMinusculas(contrasenia) || !contieneNumeros(contrasenia)) {
