@@ -69,8 +69,9 @@ nav ul li a:hover {
 }
 
 .message{
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
+    color: #da1010;
 }
 
 .contenedor-cursos {
