@@ -22,6 +22,7 @@
     </ul>
 </nav>
 <div class="contenedor">
+    <p>¡Inicia sesión o regístrate para ver nuestros cursos y suscribirte a ellos!</p>
     <div class="contenedor-cursos">
         <div class="columna-curso"  th:each="course : ${courses}">
             <a th:href="@{/courses/{id}(id=${course.id})}">
