@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${post.title}">Post</title>
-    <link rel="stylesheet" href="/css/course.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/post.css">
     <link rel="icon" type="image/png" href="/img/logo.png">
 </head>
 <body>
@@ -16,7 +17,7 @@
     <h1 th:text="${post.title}">Título del post</h1>
     <p th:text="${post.user.username}"></p>
     <p th:text="${#temporals.format(post.date, 'dd/MM/yyyy')}">Fecha del post</p>
-    <div th:if="${post.imgBase64 != null}" class="video-container">
+    <div th:if="${post.imgBase64 != null}" class="post-container">
         <img th:src="${post.imgBase64}" alt="imagen del post">
     </div>
     <p class="description" th:text="${post.content}">Contenido del post</p>
@@ -50,6 +51,15 @@
         </div>
     </div>
 </div>
-
+<footer>
+    <div class="footer-content">
+        <a th:href="@{../politicaPrivacidad}">Política de Privacidad</a>
+        <a th:href="@{../ayuda}">Ayuda</a>
+        <a th:href="@{../acercaDe}">Acerca de</a>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2023 TRENdGYM - Todos los derechos reservados</p>
+    </div>
+</footer>
 </body>
 </html>

@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foro de la comunidad</title>
     <link rel="stylesheet" href="/css/foro.css">
 </head>
@@ -44,8 +45,8 @@
             <button sec:authorize="isAuthenticated()" type="submit" class="submit-btn">Publicar</button>
         </form>
     </div>
-    <div class="contenedor-cursos">
-        <div class="columna-curso"  th:each="post : ${posts}">
+    <div class="contenedor-posts">
+        <div class="columna-post"  th:each="post : ${posts}">
             <a th:href="@{/Foro/{id}(id=${post.id})}">
                 <div class="eliminar-boton" th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}">
                     <form th:action="@{/Foro/{id}(id=${post.id})}" method="post">
