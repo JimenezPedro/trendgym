@@ -1,4 +1,4 @@
-
+//Validar contraseñas y nombre de usuario
 document.getElementById('username').addEventListener('focus', function (){
     document.getElementById('errorNombreUsuario').style.display='none';
 });
