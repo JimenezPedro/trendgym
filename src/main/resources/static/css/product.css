@@ -167,10 +167,6 @@ footer {
         margin-right: 0;
     }
 
-    header .user-profile,
-    header .login-register {
-        margin-top: 10px;
-    }
 
     nav ul{
         display: flex;
@@ -188,5 +184,36 @@ footer {
 
     .price{
         width: 25%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    header .logo img {
+        margin-right: 0;
+    }
+
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    .container {
+        margin-bottom: 150px;
+    }
+
+    .price {
+        width: 35%;
     }
 }
