@@ -156,7 +156,55 @@ footer {
     font-size: 14px;
 }
 
-@media screen and (max-width: 600px) {
+
+
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    header .logo img {
+        margin-right: 0;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav ul li{
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    header .logo img {
+        margin-right: 0;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav ul li{
+        text-align: center;
+    }
     table {
         width: 100%;
     }
