@@ -57,7 +57,7 @@ public class UserController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute("user") UserRegisterDTO userRegisterDTO,Model model){
-        boolean nombreUsuarioExistente = userService.findUsername(userRegisterDTO.getUsername());
+        boolean nombreUsuarioExistente = userService.findUsername(userRegisterDTO.getUsername().trim());
         if (nombreUsuarioExistente) {
             model.addAttribute("errorNombreUsuario", "El nombre de usuario ya está en uso.");
             return "register";
