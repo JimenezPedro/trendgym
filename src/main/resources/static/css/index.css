@@ -203,6 +203,10 @@ footer {
         display: flex;
         flex-direction: column;
     }
+
+    .productos img{
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 768px) {
