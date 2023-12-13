@@ -220,6 +220,7 @@ button:hover {
 
 
 footer {
+    margin-top: 200px;
     background: linear-gradient(to right, #003974, #0056b3);
     color: white;
     text-align: center;
