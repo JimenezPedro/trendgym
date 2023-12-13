@@ -209,7 +209,9 @@ h2 {
 }
 
 
-ul, li {
+ul, li, a {
+    color: #000000;
+    text-decoration: none;
     margin: 0;
     padding: 0;
 }

@@ -91,7 +91,7 @@
     <h2>Tus cursos</h2>
     <div class="course-list" th:each="curso : ${courses}">
       <ul class="course-item">
-        <li th:text="${curso.name}"></li>
+        <a th:href="@{'/courses/' + ${curso.id}}"><li th:text="${curso.name}"></li></a>
       </ul>
     </div>
   </div>
