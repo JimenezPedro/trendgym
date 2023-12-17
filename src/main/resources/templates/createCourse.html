@@ -12,36 +12,36 @@
     <a th:href="@{index}"><img src="/img/logo.png" alt="Ícono del gimnasio"></a>
     <h1>TRENdGYM</h1>
 </header>
-<div class="register-wrapper">
-    <div class="login-container">
-        <form th:action="@{/creationCourse}" class="course-form" enctype="multipart/form-data" th:object="${course}" method="post">
-            <h2>Crear curso</h2>
-            <br>
-            <div class="input-group">
-                <label for="name">Nombre del Curso</label>
-                <input type="text" id="name" name="name" th:field="*{name}" required>
-            </div>
-            <div class="input-group">
-                <label for="description">Descripción del curso</label>
-                <textarea name="description" id="description" required cols="30" th:field="*{description}" rows="10"></textarea>
-            </div>
-            <div class="input-group">
-                <label for="url">URL del curso</label>
-                <input type="text" id="url" name="url" th:field="*{url}" required>
-            </div>
-            <div class="input-group">
-                <label for="instructor">Instructor del curso</label>
-                <input type="text" id="instructor" name="instructor" th:field="*{instructor}" required>
-            </div>
-            <div class="input-group">
-                <label for="img">Imagen del curso</label>
-                <input type="file" id="img" onchange="validateImageSize()" name="img" th:field="*{img}">
-                <p id="errorMessage"></p>
-            </div>
-            <button type="submit">Registrar curso</button>
-        </form>
-    </div>
+
+<div class="login-container">
+    <form th:action="@{/creationCourse}" class="course-form" enctype="multipart/form-data" th:object="${course}" method="post">
+        <h2>Crear curso</h2>
+        <br>
+        <div class="input-group">
+            <label for="name">Nombre del Curso</label>
+            <input type="text" id="name" name="name" th:field="*{name}" required>
+        </div>
+        <div class="input-group">
+            <label for="description">Descripción del curso</label>
+            <textarea name="description" id="description" required cols="30" th:field="*{description}" rows="10"></textarea>
+        </div>
+        <div class="input-group">
+            <label for="url">URL del curso</label>
+            <input type="text" id="url" name="url" th:field="*{url}" required>
+        </div>
+        <div class="input-group">
+            <label for="instructor">Instructor del curso</label>
+            <input type="text" id="instructor" name="instructor" th:field="*{instructor}" required>
+        </div>
+        <div class="input-group">
+            <label for="img">Imagen del curso</label>
+            <input type="file" id="img" onchange="validateImageSize()" name="img" th:field="*{img}">
+            <p id="errorMessage"></p>
+        </div>
+        <button type="submit">Registrar curso</button>
+    </form>
 </div>
+
 <script src="/js/imageValidator.js"></script>
 </body>
 </html>
