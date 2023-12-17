@@ -64,6 +64,7 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     height: 80vh;
+    padding: 100px;
 }
 
 .register-wrapper {
@@ -73,9 +74,6 @@ nav ul li a:hover {
     height: 80vh;
 }
 
-.course-form{
-    padding: 100px;
-}
 
 
 #errorContrasenia{
