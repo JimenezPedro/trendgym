@@ -73,9 +73,8 @@ nav ul li a:hover {
     height: 80vh;
 }
 
-.login-wrapper .course-form{
-    margin-top: 100px;
-    margin-bottom: 100px;
+.course-form{
+    padding: 100px;
 }
 
 
